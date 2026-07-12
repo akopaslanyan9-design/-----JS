@@ -1,9 +1,11 @@
-let positionLatitude = 10;     
+let positionLatitude = 10;      
 let positionLongitude = 20;    
-let addressLatitude = 2;    
-let addressLongitude = 2;     
+let addressLatitude = 2;     
+let addressLongitude = 2;    
 let diffLat = positionLatitude - addressLatitude; 
-let diffLong = positionLongitude - addressLongitude; 
-let sumOfSquares = (diffLat ** 2) + (diffLong ** 2);
+let diffLong = positionLongitude - addressLongitude;
+let latDiffSquared = diffLat ** 2;
+let longDiffSquared = diffLong ** 2;
+let sumOfSquares = latDiffSquared + longDiffSquared;
 let distance = Math.sqrt(sumOfSquares);
-console.log("Рассчитанное расстояние:", distance);
+console.log("Рассчитанное расстояние:", distance); 
