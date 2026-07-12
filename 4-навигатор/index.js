@@ -8,4 +8,4 @@ let latDiffSquared = diffLat ** 2;
 let longDiffSquared = diffLong ** 2;
 let sumOfSquares = latDiffSquared + longDiffSquared;
 let distance = Math.sqrt(sumOfSquares);
-console.log("Рассчитанное расстояние:", distance); 
+console.log("Рассчитанное расстояние:", distance); //решение
