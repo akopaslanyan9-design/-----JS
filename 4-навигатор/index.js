@@ -6,6 +6,6 @@ let Latitude = (addressLat ** 2) + (addressLatitude ** 2);
 let result = Math.sqrt(Latitude);
 let Longitude = (addressLong ** 2) + (addressLongitude ** 2);
 let result2 = Math.sqrt(Longitude);
-console.log(result);
-console.log(result2);
+console.log(result);//результат
+console.log(result2);//результат
 
