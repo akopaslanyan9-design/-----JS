@@ -4,7 +4,7 @@ const isDrunk = false;
 
 if (age >= 18  
    && hasLicence 
-   && isDrunk) {
+   && !isDrunk) {
     console.log('может');
    }else {
     console.log('не может');
