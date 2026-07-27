@@ -9,3 +9,7 @@ if (age >= 18
    }else {
     console.log('не может');
    }
+
+
+
+   
