@@ -10,26 +10,21 @@
 //check(‘ssapdorw’, ‘wrong’) -> false
 
 
+
 function crypto(password) {
     const chars = password.split('').reverse();
     return chars.join('');
-
 }
-
-//split(''): разбивает строку на массив символов.
-//reverse(): меняет порядок элементов в массиве (в данном случае, символов).
-//join(''): объединяет элементы массива обратно в строку.
-
-console.log(crypto('password')); 
 
 function check(encryptedPassword, originalPassword) {
     const isCrypted = crypto(originalPassword);
-     if (isCrypted === encryptedPassword) {
+    if (isCrypted === encryptedPassword) {
         return true;
-     } else {
+    } else {
         return false;
-     }
+    }
 }
 
-console.log(check('ssapdorw', 'password')); 
-console.log(check('ssapdorw', 'wrong')); 
+
+console.log(check('drowssap', 'password')); 
+
