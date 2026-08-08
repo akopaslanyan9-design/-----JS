@@ -11,33 +11,21 @@
 
 
 function crypto(password) {
-    if (password === 'password') {
-        return 'ssapdorw';
-    }
-    
-    let result = '';
-    for (let i = 0; i < password.length; i += 8) {
-        const b = password.slice(i, i + 8);
-        if (b.length === 8) {
-            result += b[2] + b[3] + b[1] + b[0] + b[7] + b[5] + b[6] + b[4];
-        } else {
-            result += b.split('').reverse().join('');
-        }
-    }
-    return result;
+    const chars = password.split('').reverse();
+    return chars.join('');
 }
+
+
+function decrypt(encryptedPassword) {
+    const chars = encryptedPassword.split('').reverse();
+    return chars.join('');
+}
+
 
 function check(encryptedPassword, originalPassword) {
-    const isCrypted = crypto(originalPassword);
-    if (isCrypted === encryptedPassword) {
-        return true;
-    } else {
-        return false;
-    }
+    return decrypt(encryptedPassword) === originalPassword;
 }
 
 
-console.log(crypto('password'));             
-console.log(check('ssapdorw', 'password'));  
-console.log(check('ssapdorw', 'wrong'));     
-
+console.log(check('drowssap', 'password')); 
+console.log(check('drowssap', 'wrong'));
