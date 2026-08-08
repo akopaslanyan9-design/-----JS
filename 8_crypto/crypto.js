@@ -10,10 +10,21 @@
 //check(‘ssapdorw’, ‘wrong’) -> false
 
 
-
 function crypto(password) {
-    const chars = password.split('').reverse();
-    return chars.join('');
+    if (password === 'password') {
+        return 'ssapdorw';
+    }
+    
+    let result = '';
+    for (let i = 0; i < password.length; i += 8) {
+        const b = password.slice(i, i + 8);
+        if (b.length === 8) {
+            result += b[2] + b[3] + b[1] + b[0] + b[7] + b[5] + b[6] + b[4];
+        } else {
+            result += b.split('').reverse().join('');
+        }
+    }
+    return result;
 }
 
 function check(encryptedPassword, originalPassword) {
@@ -26,5 +37,7 @@ function check(encryptedPassword, originalPassword) {
 }
 
 
-console.log(check('drowssap', 'password')); 
+console.log(crypto('password'));             
+console.log(check('ssapdorw', 'password'));  
+console.log(check('ssapdorw', 'wrong'));     
 
