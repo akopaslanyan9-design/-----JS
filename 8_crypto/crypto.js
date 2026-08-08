@@ -1,0 +1,35 @@
+//шифратор пароля - функция принимает пароль, разбивает по символам, 
+//меняет местами какие-то буквы по заданному алгоритму и возвращает строку.
+//проверка пароля - принимает зашифрованный пароль и второй пароль. 
+//Воспроизводит алгоритм назад на зашифрованном пароле и возвращает true, 
+//если он совпадает со втором паролем и false, если нет.
+//crypto(‘password’) -> ssapdorw
+//
+//check(‘ssapdorw’, ‘password’) -> true
+//
+//check(‘ssapdorw’, ‘wrong’) -> false
+
+
+function crypto(password) {
+    const chars = password.split('').reverse();
+    return chars.join('');
+
+}
+
+//split(''): разбивает строку на массив символов.
+//reverse(): меняет порядок элементов в массиве (в данном случае, символов).
+//join(''): объединяет элементы массива обратно в строку.
+
+console.log(crypto('password')); 
+
+function check(encryptedPassword, originalPassword) {
+    const isCrypted = crypto(originalPassword);
+     if (isCrypted === encryptedPassword) {
+        return true;
+     } else {
+        return false;
+     }
+}
+
+console.log(check('ssapdorw', 'password')); 
+console.log(check('ssapdorw', 'wrong')); 
